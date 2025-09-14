@@ -3,25 +3,7 @@ class multiple_choice {
   constructor(right = [], wrong = [], unknown = []){
     this.correctAnswers = right;
     this.unknownAnswers = unknown;
-    this.incorrectAnswers = wrong;
-  }
 
-  static answer(text, answers = []){
-    if(!MC.savedText.includes(text)){
-      multiple_choice.addQuestion(text, [], [], answers);
-    }
-    
-    var question = MC.savedAnswers[MC.savedText.indexOf(text)];
-
-    if(answers.length == 0){
-      answers = answers.concat(question.correctAnswers).concat(question.unknownAnswers).concat(question.incorrectAnswers);
-    }
-
-    var right = [];
-
-    var wrong = [];
-
-    var unknown = [];
 
     for(var i = 0; i < answers.length; i++){
       if(question.correctAnswers.includes(answers[i])){
